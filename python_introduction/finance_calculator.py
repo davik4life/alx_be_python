@@ -1,5 +1,5 @@
 monthlyIncome = input("Enter your monthly income: ")
-monthlyExpenses = input("Enter your monthly expenses: ")
+monthlyExpenses = input("Enter your total monthly expenses: ")
 interestRate = 0.05
 year = 12
 monthlySavings = int(monthlyIncome) - int(monthlyExpenses)
