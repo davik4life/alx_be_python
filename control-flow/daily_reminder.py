@@ -11,12 +11,12 @@ match (priority):
             print(f"Reminder: '{task}' is not time-bound, but should still be prioritized.")
     case ("medium"):
         if time_bound == "yes":
-            print(f"Reminder: '{task}' is a medium priority task that should be addressed soon.")
+            print(f"Reminder: '{task}' is a medium priority task that requires immediate attention today!")
         else:
             print(f"Reminder: '{task}' is not time-bound. Schedule it accordingly.")
     case ("low"):
         if time_bound == "yes":
-            print(f"Reminder: '{task}' is time-bound. Don't forget to get to it.")
+            print(f"Reminder: '{task}' is time-bound that requires immediate attention today!")
         else:
             print(f"Reminder: '{task}' is not time-bound. It can be done at your convenience.")
     case _:
