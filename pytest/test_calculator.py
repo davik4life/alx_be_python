@@ -1,30 +1,30 @@
-# from calculator import addition, subtraction, multiplication, division
+from calculator import Calculator
 # import pytest
 
-def test_addition():
-    assert 2 + 6 == 8
-    assert 0 + 0 == 0
-    assert -1 + 1 == 0
-    assert -5 + -3 == -8
+def test_addition(calculator):
+    assert calculator.addition(2, 6) == 8
+    assert calculator.addition(0, 0) == 0
+    assert calculator.addition(-1, 1) == 0
+    assert calculator.addition(-5, -3) == -8
 
-def test_subtraction():
-    assert 10 - 5 == 5
-    assert 0 - 0 == 0
-    assert -1 - (-1) == 0
-    assert -5 - (-3) == -2
+def test_subtraction(calculator):
+    assert calculator.subtraction(10, 5) == 5
+    assert calculator.subtraction(0, 0) == 0
+    assert calculator.subtraction(-1, -1) == 0
+    assert calculator.subtraction(-5, -3) == -2
 
-def test_multiplication():
-    assert 4 * 2 == 8
-    assert 0 * 5 == 0
-    assert -1 * 1 == -1
-    assert -3 * -3 == 9
+def test_multiplication(calculator):
+    assert calculator.multiplication(4, 2) == 8
+    assert calculator.multiplication(0, 5) == 0
+    assert calculator.multiplication(-1, 1) == -1
+    assert calculator.multiplication(-3, -3) == 9
 
-def test_division():
-    assert 8 / 2 == 4
-    assert -6 / 2 == -3
-    assert -9 / -3 == 3
+def test_division(calculator):
+    assert calculator.division(8, 2) == 4
+    assert calculator.division(-6, 2) == -3
+    assert calculator.division(-9, -3) == 3
     try:
-        result = 5 / 0
+        result = calculator.division(5, 0)
     except ZeroDivisionError:
         result = None
     assert result is None
