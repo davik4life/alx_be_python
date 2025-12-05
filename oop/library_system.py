@@ -29,7 +29,7 @@ class Book:
         self.author = author
 
     def __str__(self):
-        return f"'{self.title}' by {self.author}"
+        return f"Book: {self.title} by {self.author}"
     
 class EBook(Book):
     def __init__(self, title, author, file_size):
@@ -37,14 +37,14 @@ class EBook(Book):
         self.file_size = file_size  # in MB
 
     def __str__(self):
-        return f"{super().__str__()} [EBook, {self.file_size}MB]"
+        return f"EBook: {super().__str__()}, File Size: {self.file_size}KB"
     
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
         super().__init__(title, author)
         self.page_count = page_count  # number of pages
     def __str__(self):
-        return f"{super().__str__()} [PrintBook, {self.page_count} pages]"
+        return f"PrintBook: {super().__str__()} by {self.author}, Page Count: {self.page_count}"
 class Library:
     def __init__(self):
         self.books = []
@@ -59,4 +59,10 @@ class Library:
         for book in self.books:
             print(book)
             
+
+"""[Expected]
+Book: Pride and Prejudice by Jane Austen
+EBook: Snow Crash by Neal Stephenson, File Size: 500KB
+PrintBook: The Catcher in the Rye by J.D. Salinger, Page Count: 234
+"""
         
